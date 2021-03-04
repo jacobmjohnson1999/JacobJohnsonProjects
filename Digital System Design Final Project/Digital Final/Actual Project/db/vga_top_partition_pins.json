@@ -1,0 +1,97 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "h_sync_m",
+					"strict" : false
+				},
+				{
+					"name" : "v_sync_m",
+					"strict" : false
+				},
+				{
+					"name" : "red_m[0]",
+					"strict" : false
+				},
+				{
+					"name" : "red_m[1]",
+					"strict" : false
+				},
+				{
+					"name" : "red_m[2]",
+					"strict" : false
+				},
+				{
+					"name" : "red_m[3]",
+					"strict" : false
+				},
+				{
+					"name" : "green_m[0]",
+					"strict" : false
+				},
+				{
+					"name" : "green_m[1]",
+					"strict" : false
+				},
+				{
+					"name" : "green_m[2]",
+					"strict" : false
+				},
+				{
+					"name" : "green_m[3]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_m[0]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_m[1]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_m[2]",
+					"strict" : false
+				},
+				{
+					"name" : "blue_m[3]",
+					"strict" : false
+				},
+				{
+					"name" : "direction",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n_m",
+					"strict" : false
+				},
+				{
+					"name" : "pixel_clk_m",
+					"strict" : false
+				},
+				{
+					"name" : "demoMode",
+					"strict" : false
+				},
+				{
+					"name" : "gameEnable",
+					"strict" : false
+				},
+				{
+					"name" : "in_a",
+					"strict" : false
+				},
+				{
+					"name" : "in_b",
+					"strict" : false
+				},
+				{
+					"name" : "set_origin_n",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

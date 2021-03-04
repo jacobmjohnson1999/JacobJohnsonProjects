@@ -1,0 +1,1107 @@
+-- --------------------------------------  
+--
+--  BASIC VHDL LOGIC GATES PACKAGE
+--
+--  (C) 2018, 2019 JW BRUCE 
+--  TENNESSEE TECH UNIVERSITY 
+--
+-- ----------------------------------------
+--      DO NOT MODIFY THIS FILE!!!!!!!!!
+-- ----------------------------------------
+-- REVISION HISTORY
+-- ----------------------------------------
+-- Rev 0.1 -- Created        (JWB Nov.2018)
+-- Rev 0.2 -- Refactored into package
+--                           (JWB Nov.2018)
+-- Rev 0.3 -- Added more combinational
+--            gates and the first sequential
+--            logic primitives (SR latch & FF)
+--                           (JWB Dec.2018)
+-- Rev 0.4 -- Clean up some and prepared
+--            for use in the Spring 2019
+--            semester
+--                           (JWB Feb.2019)
+-- Rev 0.5 -- Created better design example
+--            for use in the Spring 2019
+--            semester
+--                           (JWB Feb.2019)
+-- Rev 0.6 -- Added some behavioral combi
+--            logic building blocks
+--                           (JWB Sept.2019)
+
+--
+-- ================================================
+-- Package currently contains the following gates:
+-- ================================================
+--  COMBINATIONAL               SEQUENTIAL
+--    inv                         SR 
+--    orX
+--    norX
+--    andX
+--    nandX
+--    xorX
+--    xnorX
+--
+--  where X is 2, 3, 4 and
+--    denotes the number of inputs
+-- ==================================
+
+-- --------------------------------------  
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+--- -------------------------------------  
+
+-- EXAMPLE 1 : package and package body definition
+
+package TTU is
+  constant Size: Natural; -- Deferred constant
+  subtype Byte is STD_LOGIC_VECTOR(7 downto 0);
+  -- Subprogram declaration...
+  function PARITY (V: Byte) return STD_LOGIC;
+  function MAJ4 (x1: STD_LOGIC; x2:STD_LOGIC; x3:STD_LOGIC;x4:STD_LOGIC) return STD_LOGIC;
+end package TTU;
+
+package body TTU is
+  constant Size: Natural := 16;
+  -- Subprogram body...
+  function PARITY (V: Byte) return STD_LOGIC is
+    variable B: STD_LOGIC := '0';
+  begin
+    for I in V'RANGE loop
+      B := B xor V(I);
+    end loop;
+    return B;
+  end function PARITY;
+  
+  function MAJ4 (x1: STD_LOGIC;x2:STD_LOGIC;x3:STD_LOGIC;x4:STD_LOGIC) return STD_LOGIC is
+    variable tmp: STD_LOGIC_VECTOR(3 downto 0);
+    variable retval: STD_LOGIC;
+  begin
+    tmp := x1 & x2 & x3 & x4;
+    
+    if (tmp = "1110") then
+      retval := '1';
+    elsif (tmp = "1101") then
+      retval := '1';
+    elsif (tmp = "1011") then      
+      retval := '1';
+    elsif (tmp = "0111") then      
+      retval := '1';
+    elsif (tmp = "1111") then      
+      retval := '1';
+    else      
+      retval := '0';
+    end if;
+    return retval;
+  end function MAJ4;
+  
+end package body TTU;
+
+----------------------------------------  
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity EX_PACKAGE is port(
+  A  :  in Byte;
+  Y  : out STD_LOGIC);
+end entity EX_PACKAGE;
+
+architecture A1 of EX_PACKAGE is
+  begin
+    Y <= PARITY(A);
+end architecture A1;
+
+----------------------------------------  
+-- The INVERTER
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tINV is
+port(
+  x: in STD_LOGIC;
+  y: out STD_LOGIC);
+end tINV;
+
+architecture RTL of tINV is
+begin
+  process(x) is
+  begin
+    y <= not x;
+  end process;
+end RTL;
+
+-- ------------------------------------
+-- OR GATES
+
+----------------------------------------  
+-- The TWO-INPUT OR GATE
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tOR2 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  y: out std_logic);
+end tOR2;
+
+architecture RTL of tOR2 is
+begin
+  process(x0, x1) is
+  begin
+    y <= x0 or x1;
+  end process;
+end RTL;
+
+-- The THREE-input OR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tOR3 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  y: out std_logic);
+end tOR3;
+
+architecture RTL of tor3 is
+begin
+  process(x0, x1, x2) is
+  begin
+    y <= x1 or x2 or x0;
+  end process;
+end RTL;
+
+-- The FOUR-input OR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tOR4 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  x3: in std_logic;
+  y: out std_logic);
+end tOR4;
+
+architecture RTL of tOR4 is
+begin
+  process(x1, x2, x3, x0) is
+  begin
+    y <= x1 or x2 or x3 or x0;
+  end process;
+end RTL;
+
+-- ------------------------------------
+-- AND GATES
+
+-- The TWO-input AND gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tAND2 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  y: out std_logic);
+end tAND2;
+
+architecture RTL of tAND2 is
+begin
+  process(x1, x0) is
+  begin
+    y <= x1 and x0;
+  end process;
+end RTL;
+
+-- The THREE-input AND gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tAND3 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  y: out std_logic);
+end tAND3;
+
+architecture RTL of tAND3 is
+begin
+  process(x1, x2, x0) is
+  begin
+    y <= x1 and x2 and x0;
+  end process;
+end RTL;
+
+-- The FOUR-input AND gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tAND4 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  x3: in std_logic;
+  y: out std_logic);
+end tAND4;
+
+architecture RTL of tAND4 is
+begin
+  process(x1, x2, x3, x0) is
+  begin
+    y <= x1 and x2 and x3 and x0;
+  end process;
+end RTL;
+
+-- The Five-input AND gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tAND5 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  x3: in std_logic;
+  x4: in std_logic;
+  y: out std_logic);
+end tAND5;
+
+architecture RTL of tAND5 is
+begin
+  process(x1, x2, x3, x4, x0) is
+  begin
+    y <= x1 and x2 and x3 and x4 and x0;
+  end process;
+end RTL;
+
+-- ------------------------------------
+-- XOR GATES
+
+-- The TWO-input XOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tXOR2 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  y: out std_logic);
+end tXOR2;
+
+architecture RTL of tXOR2 is
+begin
+  process(x1, x0) is
+  begin
+    y <= x1 xor x0;
+  end process;
+end RTL;
+
+-- The THREE-input XOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tXOR3 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  y: out std_logic);
+end tXOR3;
+
+architecture RTL of tXOR3 is
+begin
+  process(x1, x2, x0) is
+  begin
+    y <= x1 xor x2 xor x0;
+  end process;
+end RTL;
+
+-- The FOUR-input XOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tXOR4 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  x3: in std_logic;
+  y: out std_logic);
+end tXOR4;
+
+architecture RTL of tXOR4 is
+begin
+  process(x1, x2, x3, x0) is
+  begin
+    y <= x1 xor x2 xor x3 xor x0;
+  end process;
+end RTL;
+
+-- ------------------------------------
+-- NOR GATES
+
+-- The TWO-input NOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tNOR2 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  y: out std_logic);
+end tNOR2;
+
+architecture RTL of tNOR2 is
+begin
+  process(x1, x0) is
+  begin
+    y <= x1 nor x0;
+  end process;
+end RTL;
+
+-- The THREE-input NOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tNOR3 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  y: out std_logic);
+end tNOR3;
+
+architecture RTL of tNOR3 is
+begin
+  process(x1, x2, x0) is
+  begin
+    y <= not(x1 or x2 or x0);
+  end process;
+end RTL;
+
+-- The FOUR-input NOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tNOR4 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  x3: in std_logic;
+  y: out std_logic);
+end tNOR4;
+
+architecture RTL of tNOR4 is
+begin
+  process(x1, x2, x3, x0) is
+  begin
+    y <= not(x1 or x2 or x3 or x0);
+  end process;
+end RTL;
+
+-- The eight-input NOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tNOR8 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  x3: in std_logic;
+  x4: in std_logic;
+  x5: in std_logic;
+  x6: in std_logic;
+  x7: in std_logic;
+  y: out std_logic);
+end tNOR8;
+
+architecture RTL of tNOR8 is
+begin
+  process(x1, x2, x3, x4, x5, x6, x7, x0) is
+  begin
+    y <= not(x1 or x2 or x3 or x0 or x4 or x5 or x6 or x7);
+  end process;
+end RTL;
+
+-- ------------------------------------
+-- NAND GATES
+
+-- The TWO-input NAND gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tNAND2 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  y: out std_logic);
+end tNAND2;
+
+architecture RTL of tNAND2 is
+begin
+  process(x1, x0) is
+  begin
+    y <= x1 nand x0;
+  end process;
+end RTL;
+
+-- The THREE-input NAND gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tNAND3 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  y: out std_logic);
+end tNAND3;
+
+architecture RTL of tNAND3 is
+begin
+  process(x1, x2, x0) is
+  begin
+    y <= not(x1 and x2 and x0);
+  end process;
+end RTL;
+
+-- The FOUR-input NAND gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tNAND4 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  x3: in std_logic;
+  y: out std_logic);
+end tNAND4;
+
+architecture RTL of tNAND4 is
+begin
+  process(x1, x2, x3, x0) is
+  begin
+    y <= not(x1 and x2 and x3 and x0);
+  end process;
+end RTL;
+
+-- ------------------------------------
+-- XNOR GATES
+
+-- The TWO-input XNOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tXNOR2 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  y: out std_logic);
+end tXNOR2;
+
+architecture RTL of tXNOR2 is
+begin
+  process(x1, x0) is
+  begin
+    y <= x1 xnor x0;
+  end process;
+end RTL;
+
+-- The THREE-input XNOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tXNOR3 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  y: out std_logic);
+end tXNOR3;
+
+architecture RTL of tXNOR3 is
+begin
+  process(x1, x2, x0) is
+  begin
+    y <= not(x1 xor x2 xor x0);
+  end process;
+end rtl;
+
+-- The FOUR-input XOR gate
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tXNOR4 is
+port(
+  x0: in std_logic;
+  x1: in std_logic;
+  x2: in std_logic;
+  x3: in std_logic;
+  y: out std_logic);
+end tXNOR4;
+
+architecture RTL of tXNOR4 is begin
+  process(x1, x2, x3, x0) is
+  begin
+    y <= not(x0 xor x1 xor x2 xor x3);
+  end process;
+end RTL;
+
+-- =======================================================
+-- === COMBINATIONAL LOGIC BUILDING BLOCKS
+-- =======================================================
+
+-- the 3-to-8 decoder
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use work.TTU.all;
+
+entity tdecoder_3to8 is
+	port ( 	sel : in STD_LOGIC_VECTOR (2 downto 0);
+			y : out STD_LOGIC_VECTOR (7 downto 0));
+end tdecoder_3to8;
+
+architecture behavioral of tdecoder_3to8 is
+	begin
+		with sel select
+			y <=	"00000001" when "000",
+					"00000010" when "001",
+					"00000100" when "010",
+					"00001000" when "011",
+					"00010000" when "100",
+					"00100000" when "101",
+					"01000000" when "110",
+					"10000000" when "111",
+					"00000000" when others;
+end behavioral;
+
+-- the two-to-one MUX
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use work.TTU.all;
+ 
+entity tmux_2to1 is
+	port(	A,B : in STD_LOGIC;
+			S: in STD_LOGIC;
+			Z: out STD_LOGIC);
+end tmux_2to1;
+ 
+architecture behavioral of tmux_2to1 is
+	begin
+ 
+	process (A,B,S) is
+		begin
+			if (S ='0') then
+				Z <= A;
+			else
+				Z <= B;
+			end if;
+	end process;
+end behavioral;
+
+-- the four-to-one MUX
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TTU.all;
+
+entity tmux_4to1 is
+ port(A,B,C,D : in STD_LOGIC;
+      S0,S1: in STD_LOGIC;
+      Z: out STD_LOGIC);
+end tmux_4to1;
+ 
+architecture behavioral of tmux_4to1 is
+	begin
+		process (A,B,C,D,S0,S1) is
+			begin
+  				if (S0 ='0' and S1 = '0') then
+      				Z <= A;
+  				elsif (S0 ='1' and S1 = '0') then
+      				Z <= B;
+  				elsif (S0 ='0' and S1 = '1') then
+      				Z <= C;
+  				else
+      				Z <= D;
+  				end if;
+		end process;
+end behavioral;
+
+-- bcd to 7 seg, 0-F
+--provide a bcd number, returns a vector (a to g), active high
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use work.TTU.all;
+
+entity tbcd7seg is
+	port(
+		bcd: in std_logic_vector (3 downto 0) :=(others => '0');
+		y: out std_logic_vector (6 downto 0));
+end tbcd7seg;
+
+architecture RTL of tbcd7seg is 
+begin
+	with bcd select
+		y <=	"1111110" when "0000", --0
+				"0110000" when "0001", --1
+				"1101101" when "0010", --2
+				"1111001" when "0011", --3
+				"0110011" when "0100", --4
+				"1011011" when "0101", --5
+				"1011111" when "0110", --6
+				"1110000" when "0111", --7
+				"1111111" when "1000", --8
+				"1111011" when "1001", --9
+				"1110111" when "1010", --A
+				"0011111" when "1011", --b
+				"1001110" when "1100", --C
+				"0111101" when "1101", --d
+				"1001111" when "1110", --E
+				"1000111" when "1111"; --F
+
+end RTL;
+
+--------------- experimental
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use work.TTU.all;
+entity tletter is
+	port(
+		myrow: in std_logic_vector (3 downto 0);
+		colarray: out std_logic_vector (7 downto 0)
+	);
+	
+	
+end tletter;
+
+
+architecture RTL of tletter is
+begin
+	
+	with myrow select
+		colarray <= 	"00000000" when "0000", -- 0
+							"00000000" when "0001", -- 1
+							"01111100" when "0010", -- 2  *****
+							"11000110" when "0011", -- 3 **   **
+							"11000110" when "0100", -- 4 **   **
+							"11001110" when "0101", -- 5 **  ***
+							"11011110" when "0110", -- 6 ** ****
+							"11110110" when "0111", -- 7 **** **
+							"11100110" when "1000", -- 8 ***  **
+							"11000110" when "1001", -- 9 **   **
+							"11000110" when "1010", -- a **   **
+							"01111100" when "1011", -- b  *****
+							"00000000" when "1100", -- c
+							"00000000" when "1101", -- d
+							"00000000" when "1110", -- e
+							"00000000" when "1111"; -- f
+							
+end RTL;
+
+
+-------------- experimental - select digit
+--
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use work.TTU.all;
+entity tdigits is
+	port(
+		numselect: in std_logic_vector (3 downto 0);
+		myrow: in std_logic_vector (3 downto 0);
+		colarray: out std_logic_vector (7 downto 0)
+	);
+	
+	
+end tdigits;
+
+
+architecture RTL of tdigits is
+begin
+	ree:process(numselect,myrow)
+	begin
+
+	if(numselect = "0000"	) then					
+case myrow is							
+when	 "0000"	 =>	colarray	<=	"00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "01111100"	;	 -- 2  *****
+when	 "0011"	 =>	colarray	<=	  "11000110"	;	 -- 3 **   **
+when	 "0100"	 =>	colarray	<=	  "11000110"	;	 -- 4 **   **
+when	 "0101"	 =>	colarray	<=	  "11001110"	;	 -- 5 **  ***
+when	 "0110"	 =>	colarray	<=	  "11011110"	;	 -- 6 ** ****
+when	 "0111"	 =>	colarray	<=	  "11110110"	;	 -- 7 **** **
+when	 "1000"	 =>	colarray	<=	  "11100110"	;	 -- 8 ***  **
+when	 "1001"	 =>	colarray	<=	  "11000110"	;	 -- 9 **   **
+when	 "1010"	 =>	colarray	<=	  "11000110"	;	 -- a **   **
+when	 "1011"	 =>	colarray	<=	  "01111100"	;	 -- b  *****
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = 	"0001"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "00011000"	;	 -- 2
+when	 "0011"	 =>	colarray	<=	  "00111000"	;	 -- 3
+when	 "0100"	 =>	colarray	<=	  "01111000"	;	 -- 4    **
+when	 "0101"	 =>	colarray	<=	  "00011000"	;	 -- 5   ***
+when	 "0110"	 =>	colarray	<=	  "00011000"	;	 -- 6  ****
+when	 "0111"	 =>	colarray	<=	  "00011000"	;	 -- 7    **
+when	 "1000"	 =>	colarray	<=	  "00011000"	;	 -- 8    **
+when	 "1001"	 =>	colarray	<=	  "00011000"	;	 -- 9    **
+when	 "1010"	 =>	colarray	<=	  "00011000"	;	 -- a    **
+when	 "1011"	 =>	colarray	<=	  "01111110"	;	 -- b    **
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c    **
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d  ******
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = 	"0010"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "01111100"	;	 -- 2  *****
+when	 "0011"	 =>	colarray	<=	  "11000110"	;	 -- 3 **   **
+when	 "0100"	 =>	colarray	<=	  "00000110"	;	 -- 4      **
+when	 "0101"	 =>	colarray	<=	  "00001100"	;	 -- 5     **
+when	 "0110"	 =>	colarray	<=	  "00011000"	;	 -- 6    **
+when	 "0111"	 =>	colarray	<=	  "00110000"	;	 -- 7   **
+when	 "1000"	 =>	colarray	<=	  "01100000"	;	 -- 8  **
+when	 "1001"	 =>	colarray	<=	  "11000000"	;	 -- 9 **
+when	 "1010"	 =>	colarray	<=	  "11000110"	;	 -- a **   **
+when	 "1011"	 =>	colarray	<=	  "11111110"	;	 -- b *******
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = "0011"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "01111100"	;	 -- 2  *****
+when	 "0011"	 =>	colarray	<=	  "11000110"	;	 -- 3 **   **
+when	 "0100"	 =>	colarray	<=	  "00000110"	;	 -- 4      **
+when	 "0101"	 =>	colarray	<=	  "00000110"	;	 -- 5      **
+when	 "0110"	 =>	colarray	<=	  "00111100"	;	 -- 6   ****
+when	 "0111"	 =>	colarray	<=	  "00000110"	;	 -- 7      **
+when	 "1000"	 =>	colarray	<=	  "00000110"	;	 -- 8      **
+when	 "1001"	 =>	colarray	<=	  "00000110"	;	 -- 9      **
+when	 "1010"	 =>	colarray	<=	  "11000110"	;	 -- a **   **
+when	 "1011"	 =>	colarray	<=	  "01111100"	;	 -- b  *****
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = "0100"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "00001100"	;	 -- 2     **
+when	 "0011"	 =>	colarray	<=	  "00011100"	;	 -- 3    ***
+when	 "0100"	 =>	colarray	<=	  "00111100"	;	 -- 4   ****
+when	 "0101"	 =>	colarray	<=	  "01101100"	;	 -- 5  ** **
+when	 "0110"	 =>	colarray	<=	  "11001100"	;	 -- 6 **  **
+when	 "0111"	 =>	colarray	<=	  "11111110"	;	 -- 7 *******
+when	 "1000"	 =>	colarray	<=	  "00001100"	;	 -- 8     **
+when	 "1001"	 =>	colarray	<=	  "00001100"	;	 -- 9     **
+when	 "1010"	 =>	colarray	<=	  "00001100"	;	 -- a     **
+when	 "1011"	 =>	colarray	<=	  "00011110"	;	 -- b    ****
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = "0101"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "11111110"	;	 -- 2 *******
+when	 "0011"	 =>	colarray	<=	  "11000000"	;	 -- 3 **
+when	 "0100"	 =>	colarray	<=	  "11000000"	;	 -- 4 **
+when	 "0101"	 =>	colarray	<=	  "11000000"	;	 -- 5 **
+when	 "0110"	 =>	colarray	<=	  "11111100"	;	 -- 6 ******
+when	 "0111"	 =>	colarray	<=	  "00000110"	;	 -- 7      **
+when	 "1000"	 =>	colarray	<=	  "00000110"	;	 -- 8      **
+when	 "1001"	 =>	colarray	<=	  "00000110"	;	 -- 9      **
+when	 "1010"	 =>	colarray	<=	  "11000110"	;	 -- a **   **
+when	 "1011"	 =>	colarray	<=	  "01111100"	;	 -- b  *****
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = "0110"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "00111000"	;	 -- 2   ***
+when	 "0011"	 =>	colarray	<=	  "01100000"	;	 -- 3  **
+when	 "0100"	 =>	colarray	<=	  "11000000"	;	 -- 4 **
+when	 "0101"	 =>	colarray	<=	  "11000000"	;	 -- 5 **
+when	 "0110"	 =>	colarray	<=	  "11111100"	;	 -- 6 ******
+when	 "0111"	 =>	colarray	<=	  "11000110"	;	 -- 7 **   **
+when	 "1000"	 =>	colarray	<=	  "11000110"	;	 -- 8 **   **
+when	 "1001"	 =>	colarray	<=	  "11000110"	;	 -- 9 **   **
+when	 "1010"	 =>	colarray	<=	  "11000110"	;	 -- a **   **
+when	 "1011"	 =>	colarray	<=	  "01111100"	;	 -- b  *****
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = 	"0111"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "11111110"	;	 -- 2 *******
+when	 "0011"	 =>	colarray	<=	  "11000110"	;	 -- 3 **   **
+when	 "0100"	 =>	colarray	<=	  "00000110"	;	 -- 4      **
+when	 "0101"	 =>	colarray	<=	  "00000110"	;	 -- 5      **
+when	 "0110"	 =>	colarray	<=	  "00001100"	;	 -- 6     **
+when	 "0111"	 =>	colarray	<=	  "00011000"	;	 -- 7    **
+when	 "1000"	 =>	colarray	<=	  "00110000"	;	 -- 8   **
+when	 "1001"	 =>	colarray	<=	  "00110000"	;	 -- 9   **
+when	 "1010"	 =>	colarray	<=	  "00110000"	;	 -- a   **
+when	 "1011"	 =>	colarray	<=	  "00110000"	;	 -- b   **
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = "1000"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "01111100"	;	 -- 2  *****
+when	 "0011"	 =>	colarray	<=	  "11000110"	;	 -- 3 **   **
+when	 "0100"	 =>	colarray	<=	  "11000110"	;	 -- 4 **   **
+when	 "0101"	 =>	colarray	<=	  "11000110"	;	 -- 5 **   **
+when	 "0110"	 =>	colarray	<=	  "01111100"	;	 -- 6  *****
+when	 "0111"	 =>	colarray	<=	  "11000110"	;	 -- 7 **   **
+when	 "1000"	 =>	colarray	<=	  "11000110"	;	 -- 8 **   **
+when	 "1001"	 =>	colarray	<=	  "11000110"	;	 -- 9 **   **
+when	 "1010"	 =>	colarray	<=	  "11000110"	;	 -- a **   **
+when	 "1011"	 =>	colarray	<=	  "01111100"	;	 -- b  *****
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+	elsif(numselect = 	"1001"	) then				
+case myrow is							
+when	 "0000"	 =>	colarray	<=	  "00000000"	;	 -- 0
+when	 "0001"	 =>	colarray	<=	  "00000000"	;	 -- 1
+when	 "0010"	 =>	colarray	<=	  "01111100"	;	 -- 2  *****
+when	 "0011"	 =>	colarray	<=	  "11000110"	;	 -- 3 **   **
+when	 "0100"	 =>	colarray	<=	  "11000110"	;	 -- 4 **   **
+when	 "0101"	 =>	colarray	<=	  "11000110"	;	 -- 5 **   **
+when	 "0110"	 =>	colarray	<=	  "01111110"	;	 -- 6  ******
+when	 "0111"	 =>	colarray	<=	  "00000110"	;	 -- 7      **
+when	 "1000"	 =>	colarray	<=	  "00000110"	;	 -- 8      **
+when	 "1001"	 =>	colarray	<=	  "00000110"	;	 -- 9      **
+when	 "1010"	 =>	colarray	<=	  "00001100"	;	 -- a     **
+when	 "1011"	 =>	colarray	<=	  "01111000"	;	 -- b  ****
+when	 "1100"	 =>	colarray	<=	  "00000000"	;	 -- c
+when	 "1101"	 =>	colarray	<=	  "00000000"	;	 -- d
+when	 "1110"	 =>	colarray	<=	  "00000000"	;	 -- e
+when	 "1111"	 =>	colarray	<=	  "00000000"	;	 -- f
+end case;							
+
+	end if;
+	
+	
+	end process;
+
+end RTL;
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE IEEE.NUMERIC_STD.all;
+
+ENTITY lfsr8 IS
+	PORT (
+		clk			: IN STD_LOGIC;		-- Clock input
+		lfsr_out	: OUT INTEGER RANGE 0 to 255 := 1 );	-- Integer output for use in RNG applications
+--		lfsr_out	: OUT STD_LOGIC_VECTOR(7 downto 0) );	-- Testing output; only uncomment one at a time, see below
+END lfsr8;
+
+ARCHITECTURE behavioral OF lfsr8 IS
+	SIGNAL shift	: UNSIGNED(7 downto 0) := "00000001"; -- Variable for the LFSR output
+	CONSTANT delay	: INTEGER := 50_000; -- Delay in clock cycles for the register to finish operating
+BEGIN
+	PROCESS (clk)
+	VARIABLE next_val	: STD_LOGIC;	-- Store the value to be shifted in
+	VARIABLE count		: INTEGER := 0;	-- Number of clock cycles that have passed
+	BEGIN
+		IF RISING_EDGE(clk) THEN
+			count := count + 1;
+			IF (count >= delay) THEN
+				count := 0;
+				
+				next_val := shift(0) XOR shift(2) XOR shift(3) XOR shift(4);	-- Galois LFSR algorithm
+				shift <= shift_right(shift, 1);	-- Shift all values right
+				shift(7) <= next_val;			-- Load in the calculated next value
+				lfsr_out <= to_integer(shift);	-- Output
+--				lfsr_out <= std_logic_vector(shift);	-- Testing output; only uncomment one at a time, see entity outputs
+			END IF;
+		END IF;
+	END PROCESS;
+END behavioral;
+
+
+
+-- =======================================================
+-- === SEQUENTIAL GATES
+-- =======================================================
+-- The SR latch
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use work.TTU.all;
+
+entity tSR_LATCH is
+    Port ( S : in    STD_LOGIC;
+           R : in    STD_LOGIC;
+           Q : inout STD_LOGIC;
+           Qnot: inout STD_LOGIC); 
+end tSR_LATCH;
+
+architecture RTL of tSR_LATCH is begin
+  Q    <= R nor Qnot;
+  Qnot <= S nor Q;
+end RTL;
+
+-- the SR flip-flop
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use work.TTU.all;
+
+entity tSRFF is port(
+  S: in std_logic;
+  R: in std_logic;
+  CLK: in std_logic;
+  RESET: in std_logic;
+  Q: out std_logic;
+  Qnot: out std_logic);
+end tSRFF;
+
+architecture RTL of tSRFF is begin
+  process(S,R,CLK,RESET)
+  begin
+    if(RESET='1') then		-- async reset
+       Q <= '0';
+       Qnot <= '0';
+    elsif(rising_edge(clk)) then	-- synchronous behavoir
+       if( S /= R) then
+         Q <= S;
+         Qnot <= R;
+       elsif (S='1' and R='1') then
+         Q <= 'Z';
+         Qnot <= 'Z';
+       end if;
+     end if;
+   end process;
+end RTL;
+
+-- the D flip-flop
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use work.TTU.all;
+
+entity tDFF is port(
+  D: in std_logic;
+  CLK: in std_logic;
+  RESET: in std_logic;
+  Q: out std_logic;
+  Qnot: out std_logic);
+end tDFF;
+
+architecture RTL of tDFF is begin
+  process(D,CLK,RESET)
+  begin
+    if(RESET='1') then		-- async reset
+       Q <= '0';
+       Qnot <= '0';
+    elsif(rising_edge(clk)) then	-- synchronous behavoir
+       Q <= D;
+       Qnot <= not D;
+     end if;
+   end process;
+end RTL;
+
+
+
+--------------------------------------------------------------------------------
+--
+--   FileName:         quadrature_decoder.vhd
+--   Dependencies:     None
+--   Design Software:  Quartus II 64-bit Version 13.1.0 Build 162 SJ Web Edition
+--
+--   HDL CODE IS PROVIDED "AS IS."  DIGI-KEY EXPRESSLY DISCLAIMS ANY
+--   WARRANTY OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+--   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+--   PARTICULAR PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT SHALL DIGI-KEY
+--   BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL
+--   DAMAGES, LOST PROFITS OR LOST DATA, HARM TO YOUR EQUIPMENT, COST OF
+--   PROCUREMENT OF SUBSTITUTE GOODS, TECHNOLOGY OR SERVICES, ANY CLAIMS
+--   BY THIRD PARTIES (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF),
+--   ANY CLAIMS FOR INDEMNITY OR CONTRIBUTION, OR OTHER SIMILAR COSTS.
+--
+--   Version History
+--   Version 1.0 9/7/2017 Scott Larson
+--     Initial Public Release
+--
+--------------------------------------------------------------------------------
+
+
+END logic;
