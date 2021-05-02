@@ -20,8 +20,8 @@ openingLines = [Generic_Line_1, Generic_Line_2, Generic_Line_3, Generic_Line_4, 
 
 R_Type_Instructions = ["add", "sub", "and", "or"]
 Registers = ["$t0", "$t1", "$t2", "$t3", "$t4", "$t5", "$t6", "$t7", "$s0", "$s1", "$s2", "$s3", "$s4", "$s5", "$s6", "$s7", "$t8", "$t9"]
-I_Type_Instructions = ["sw"]
-I_Type_OpCode = ["101011"]
+I_Type_Instructions = ["sw", "beq"]
+I_Type_OpCode = ["101011", "000100"]
 Register_Binary = ["01000", "01001", "01010", "01011", "01100", "01101", "01110", "01111", "10000", "10001", "10010", "10011", "10100", "10101", "10110", "10111", "11000", "11001"]
 
 #Inserts a line to the text file adding the end of line delimiter
@@ -47,10 +47,8 @@ def convertCode(fileLine):
     
     #Iterates through each command
     for i in listOfoperatiors:
-    
-        #print(i)
-        
-        #Does logic for immediate values
+            
+        #Does logic for immediate values of I-type instructions
         try:
             i = int(i)
             i = bin(i)[2:]
