@@ -1,0 +1,1 @@
+This assembler is created to make the testing of the design faster. This converts MIPS assembly into machine code. This machine code is used to program the instruction memory for the attached processor design.

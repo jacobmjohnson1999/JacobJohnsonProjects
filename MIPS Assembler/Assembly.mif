@@ -1,0 +1,17 @@
+--Assembled using Jacob Johnsons's assembler.
+DEPTH = 256;                   -- The size of memory in words
+WIDTH = 32;                    -- The size of data in bits
+ADDRESS_RADIX = HEX;          -- The radix for address values
+DATA_RADIX = BIN;             -- The radix for data values
+CONTENT                       -- start of (address : data pairs)
+BEGIN
+
+[00..FF]:00000000000000000000000000000000;
+
+0: 00000001001010000100000000010000; --add $t0, $t1, $t0
+1: 00000001011011110101000000010010; --sub $t2, $t3, $t7
+2: 00000001001011010100000000010000; --add $t0, $t1, $t5
+3: 00000001001011010100000000010100; --and $t0, $t1, $t5
+4: 10101101001010100000000001100100; --sw $t1, 100($t2)
+
+END;
