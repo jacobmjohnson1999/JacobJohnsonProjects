@@ -4,3 +4,4 @@ add $t0, $t1, $t5
 and $t0, $t1, $t5
 sw $t1, 100($t2)
 beq $t1, $t2, 4
+addi $t1, $t2, 10
