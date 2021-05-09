@@ -1,4 +1,4 @@
-This application is intended to be used as a real-time monitor of a set list of stocks. 
+	This application is intended to be used as a real-time monitor of a set list of stocks. 
 The functioning idea is that all data is scraped from a webpage and displayed in a user-friendly format. The sheet structure is simple to follow.
 Stocks:
 	This sheet is used to monitor stocks. The ticker symbol is in column 1, the price in column 2 and the daily increase (price and percentage) are column 3 and 4 respectivly. To add a new stock to the list, add the ticker symbol to the bottom of column 1. A filter is built in to allow for easy viewing (typically alphabetical) and is done manually.
