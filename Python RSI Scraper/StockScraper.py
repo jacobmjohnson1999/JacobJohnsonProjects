@@ -131,7 +131,7 @@ def main():
                 listIterator = listIterator + 1
             
             lowestRSI = bestRSI(RSIValues)
-            print("The lowest RSI is: " + str(RSIValues[lowestRSI]) + " with the ticker: " + stocksToWatch[lowestRSI])
+            print("The lowest RSI is: " + str(RSIValues[lowestRSI])[:5] + " with the ticker: " + stocksToWatch[lowestRSI])
             #Delays to avoid overload    
             time.sleep(refreshRate)
         
