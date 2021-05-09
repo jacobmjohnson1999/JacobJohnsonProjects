@@ -138,8 +138,8 @@ def main():
         except(KeyboardInterrupt):
             print("RSI calculator has stopped")
             break
-        # except:
-            # print("An error has occured: " + str(sys.exc_info()[0]))
-            # break
+        except:
+            print("An error has occured: " + str(sys.exc_info()[0]))
+            break
 if(__name__ == "__main__"):
     main()
