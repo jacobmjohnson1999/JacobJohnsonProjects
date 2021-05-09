@@ -1,0 +1,273 @@
+# Reading pref.tcl
+# do MIPS_Processor_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Memory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:24 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Memory
+# -- Compiling architecture behavioral of Memory
+# End time: 22:04:24 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/ALU_Control_Unit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:24 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/ALU_Control_Unit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ALU_Control_Unit
+# -- Compiling architecture Behavior of ALU_Control_Unit
+# End time: 22:04:24 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Control_Unit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:24 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Control_Unit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity Control_Unit
+# -- Compiling architecture behavioral of Control_Unit
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/And_Gate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/And_Gate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity And_Gate
+# -- Compiling architecture And_It of And_Gate
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Adder_32_32.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Adder_32_32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Adder_32_32
+# -- Compiling architecture Adder of Adder_32_32
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Mux_2_32.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Mux_2_32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Mux_2_32
+# -- Compiling architecture Mux of Mux_2_32
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Wriite_Register_Mux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Wriite_Register_Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Write_Register_Mux
+# -- Compiling architecture behavioral of Write_Register_Mux
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Shift_Left.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Shift_Left.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Shift_Left_MIPS
+# -- Compiling architecture behavioral of Shift_Left_MIPS
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Registers.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Registers.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Registers
+# -- Compiling architecture Reg_Function of Registers
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/ALU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity alu_1
+# -- Compiling architecture Behavior of alu_1
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Signed_Extension.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Signed_Extension.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Signed_Extension
+# -- Compiling architecture Sign_Ext of Signed_Extension
+# End time: 22:04:25 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Top_Level.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:25 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Top_Level.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Top_Level
+# -- Compiling architecture structural of Top_Level
+# End time: 22:04:26 on Apr 28,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Program_Counter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:26 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Program_Counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Program_Counter
+# -- Compiling architecture behavioral of Program_Counter
+# End time: 22:04:26 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:26 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Adder
+# -- Compiling architecture behavioral of Adder
+# End time: 22:04:26 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/IP_Memory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:26 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/IP_Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity IP_Memory
+# -- Compiling architecture SYN of ip_memory
+# End time: 22:04:26 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Single Cycle/not_gate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:04:26 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Single Cycle/not_gate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity NOT_Gate
+# -- Compiling architecture behavioral of NOT_Gate
+# End time: 22:04:26 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim -gui -l msim_transcript work.top_level
+# vsim -gui -l msim_transcript work.top_level 
+# Start time: 22:06:27 on Apr 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_level(structural)
+# Loading work.adder(behavioral)
+# Loading work.program_counter(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.ip_memory(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.mux_2_32(mux)
+# Loading work.alu_1(behavior)
+# Loading work.registers(reg_function)
+# Loading work.alu_control_unit(behavior)
+# Loading work.signed_extension(sign_ext)
+# Loading work.shift_left_mips(behavioral)
+# Loading work.write_register_mux(behavioral)
+# Loading work.adder_32_32(adder)
+# Loading work.control_unit(behavioral)
+# Loading work.and_gate(and_it)
+# Loading work.memory(behavioral)
+# Loading work.not_gate(behavioral)
+add wave -position insertpoint sim:/top_level/*
+add wave -position insertpoint sim:/top_level/U5/*
+add wave -position insertpoint sim:/top_level/U14/*
+force -freeze sim:/top_level/Global_Clock 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U4
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /top_level/U0
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 11:17:16 on Apr 29,2021, Elapsed time: 13:10:49
+# Errors: 0, Warnings: 11

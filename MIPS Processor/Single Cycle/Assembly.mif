@@ -1,0 +1,19 @@
+DEPTH = 256;                   -- The size of memory in words
+WIDTH = 32;                    -- The size of data in bits
+ADDRESS_RADIX = HEX;          -- The radix for address values
+DATA_RADIX = BIN;             -- The radix for data values
+CONTENT                       -- start of (address : data pairs)
+BEGIN
+
+[00..FF]:00000000000000000000000000000000;
+
+00 : 00000001000010010101100000010000; --add $t3, $t0, $t1
+01 : 00000010000100010110000000010010; --sub $t4, $s0, $s1
+02 : 00000001011011000110100000010100; --and $t5, $t3, $t4
+03 : 01101100000011010000000000000000; --sw  $t5, 0($zero)
+04 : 00010001001010100000000000000001; --beq $t1, $t2, 07
+05 : 00000001001010100100100000010000; --add $t1, $t1, $t1
+06 : 01101101010010010000000001100100; --sw $t1, 100($t2)
+07 : 00000001011010100101000000010101; --or $t2, $t3, $t2
+
+END;
