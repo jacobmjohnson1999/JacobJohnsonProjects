@@ -71,7 +71,6 @@ def convertCode(fileLine):
             
             #Swaps the order of the operations
             listOfoperatiors[iterator-1] = tempValues[1]
-            #listOfoperatiors[iterator] = tempValues[0]
             listOfoperatiors.append(tempValues[0])
             i = tempValues[1]
 
