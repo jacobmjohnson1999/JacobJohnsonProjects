@@ -1,0 +1,671 @@
+# Reading pref.tcl
+# do MIPS_Processor_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/MEM_WB_Forward_Register.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:04 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/MEM_WB_Forward_Register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MEM_WB_Forward_Register
+# -- Compiling architecture behavioral of MEM_WB_Forward_Register
+# End time: 19:45:04 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/EX_MEM_Forward_Register.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:04 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/EX_MEM_Forward_Register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity EX_MEM_Forward_Register
+# -- Compiling architecture behaviorlal of EX_MEM_Forward_Register
+# End time: 19:45:04 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/ID_EX_Forward_Register.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/ID_EX_Forward_Register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ID_EX_Forward_Register
+# -- Compiling architecture behavioral of ID_EX_Forward_Register
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/IF_ID_Forward_Register.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/IF_ID_Forward_Register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity IF_ID_Forward_Register
+# -- Compiling architecture behavioral of IF_ID_Forward_Register
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Memory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Memory
+# -- Compiling architecture behavioral of Memory
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/ALU_Control_Unit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/ALU_Control_Unit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ALU_Control_Unit
+# -- Compiling architecture Behavior of ALU_Control_Unit
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Control_Unit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Control_Unit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity Control_Unit
+# -- Compiling architecture behavioral of Control_Unit
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/And_Gate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/And_Gate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity And_Gate
+# -- Compiling architecture And_It of And_Gate
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Adder_32_32.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Adder_32_32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Adder_32_32
+# -- Compiling architecture Adder of Adder_32_32
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Mux_2_32.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Mux_2_32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Mux_2_32
+# -- Compiling architecture Mux of Mux_2_32
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Wriite_Register_Mux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Wriite_Register_Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Write_Register_Mux
+# -- Compiling architecture behavioral of Write_Register_Mux
+# End time: 19:45:05 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Shift_Left.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:05 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Shift_Left.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Shift_Left_MIPS
+# -- Compiling architecture behavioral of Shift_Left_MIPS
+# End time: 19:45:06 on Apr 28,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Registers.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:06 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Registers.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Registers
+# -- Compiling architecture Reg_Function of Registers
+# End time: 19:45:06 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/ALU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:06 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity alu_1
+# -- Compiling architecture Behavior of alu_1
+# End time: 19:45:06 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Signed_Extension.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:06 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Signed_Extension.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Signed_Extension
+# -- Compiling architecture Sign_Ext of Signed_Extension
+# End time: 19:45:06 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Top_Level.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:06 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Top_Level.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Top_Level
+# -- Compiling architecture structural of Top_Level
+# End time: 19:45:06 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Program_Counter.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:06 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Program_Counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Program_Counter
+# -- Compiling architecture behavioral of Program_Counter
+# End time: 19:45:06 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/Adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:06 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Adder
+# -- Compiling architecture behavioral of Adder
+# End time: 19:45:06 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/IP_Memory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:06 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/IP_Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity IP_Memory
+# -- Compiling architecture SYN of ip_memory
+# End time: 19:45:07 on Apr 28,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/acure/Desktop/Computer Design Project/Multicycle/not_gate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:45:07 on Apr 28,2021
+# vcom -reportprogress 300 -93 -work work C:/Users/acure/Desktop/Computer Design Project/Multicycle/not_gate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity NOT_Gate
+# -- Compiling architecture behavioral of NOT_Gate
+# End time: 19:45:07 on Apr 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim -gui -l msim_transcript work.top_level
+# vsim -gui -l msim_transcript work.top_level 
+# Start time: 19:47:26 on Apr 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_level(structural)
+# Loading work.adder(behavioral)
+# Loading work.program_counter(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.ip_memory(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.mux_2_32(mux)
+# Loading work.alu_1(behavior)
+# Loading work.registers(reg_function)
+# Loading work.alu_control_unit(behavior)
+# Loading work.signed_extension(sign_ext)
+# Loading work.shift_left_mips(behavioral)
+# Loading work.write_register_mux(behavioral)
+# Loading work.adder_32_32(adder)
+# Loading work.control_unit(behavioral)
+# Loading work.and_gate(and_it)
+# Loading work.memory(behavioral)
+# Loading work.not_gate(behavioral)
+# Loading work.if_id_forward_register(behavioral)
+# Loading work.id_ex_forward_register(behavioral)
+# Loading work.ex_mem_forward_register(behaviorlal)
+# Loading work.mem_wb_forward_register(behavioral)
+add wave -position insertpoint sim:/top_level/*
+force -freeze sim:/top_level/Global_Clock 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U4
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /top_level/U0
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 3  Instance: /top_level/U4
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ps  Iteration: 1  Instance: /top_level/U4
+run
+run
+run
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 1  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 3  Instance: /top_level/U4
+run
+quit -sim
+vsim -gui -l msim_transcript work.top_level
+# End time: 20:48:30 on Apr 28,2021, Elapsed time: 1:01:04
+# Errors: 0, Warnings: 24
+# vsim -gui -l msim_transcript work.top_level 
+# Start time: 20:48:30 on Apr 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_level(structural)
+# Loading work.adder(behavioral)
+# Loading work.program_counter(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.ip_memory(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.mux_2_32(mux)
+# Loading work.alu_1(behavior)
+# Loading work.registers(reg_function)
+# Loading work.alu_control_unit(behavior)
+# Loading work.signed_extension(sign_ext)
+# Loading work.shift_left_mips(behavioral)
+# Loading work.write_register_mux(behavioral)
+# Loading work.adder_32_32(adder)
+# Loading work.control_unit(behavioral)
+# Loading work.and_gate(and_it)
+# Loading work.memory(behavioral)
+# Loading work.not_gate(behavioral)
+# Loading work.if_id_forward_register(behavioral)
+# Loading work.id_ex_forward_register(behavioral)
+# Loading work.ex_mem_forward_register(behaviorlal)
+# Loading work.mem_wb_forward_register(behavioral)
+add wave -position insertpoint sim:/top_level/U5/*
+force -freeze sim:/top_level/U5/clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /top_level/Global_Clock as root of /top_level/U5/clk specified in the force.
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U4
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /top_level/U0
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 3  Instance: /top_level/U4
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ps  Iteration: 1  Instance: /top_level/U4
+run
+run
+run
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 1  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 3  Instance: /top_level/U4
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1300 ps  Iteration: 3  Instance: /top_level/U4
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+vsim -gui -l msim_transcript work.top_level
+# End time: 20:58:25 on Apr 28,2021, Elapsed time: 0:09:55
+# Errors: 0, Warnings: 26
+# vsim -gui -l msim_transcript work.top_level 
+# Start time: 20:58:25 on Apr 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_level(structural)
+# Loading work.adder(behavioral)
+# Loading work.program_counter(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.ip_memory(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.mux_2_32(mux)
+# Loading work.alu_1(behavior)
+# Loading work.registers(reg_function)
+# Loading work.alu_control_unit(behavior)
+# Loading work.signed_extension(sign_ext)
+# Loading work.shift_left_mips(behavioral)
+# Loading work.write_register_mux(behavioral)
+# Loading work.adder_32_32(adder)
+# Loading work.control_unit(behavioral)
+# Loading work.and_gate(and_it)
+# Loading work.memory(behavioral)
+# Loading work.not_gate(behavioral)
+# Loading work.if_id_forward_register(behavioral)
+# Loading work.id_ex_forward_register(behavioral)
+# Loading work.ex_mem_forward_register(behaviorlal)
+# Loading work.mem_wb_forward_register(behavioral)
+add wave -position insertpoint sim:/top_level/U14/*
+force -freeze sim:/top_level/U14/clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /top_level/Global_Clock as root of /top_level/U14/clk specified in the force.
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U4
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /top_level/U0
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 3  Instance: /top_level/U4
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ps  Iteration: 1  Instance: /top_level/U4
+run
+run
+run
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 1  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 3  Instance: /top_level/U4
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1300 ps  Iteration: 3  Instance: /top_level/U4
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 22:11:34 on Apr 28,2021, Elapsed time: 1:13:09
+# Errors: 0, Warnings: 26
+vsim -gui -l msim_transcript work.top_level
+# vsim -gui -l msim_transcript work.top_level 
+# Start time: 22:11:44 on Apr 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_level(structural)
+# Loading work.adder(behavioral)
+# Loading work.program_counter(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.ip_memory(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.mux_2_32(mux)
+# Loading work.alu_1(behavior)
+# Loading work.registers(reg_function)
+# Loading work.alu_control_unit(behavior)
+# Loading work.signed_extension(sign_ext)
+# Loading work.shift_left_mips(behavioral)
+# Loading work.write_register_mux(behavioral)
+# Loading work.adder_32_32(adder)
+# Loading work.control_unit(behavioral)
+# Loading work.and_gate(and_it)
+# Loading work.memory(behavioral)
+# Loading work.not_gate(behavioral)
+# Loading work.if_id_forward_register(behavioral)
+# Loading work.id_ex_forward_register(behavioral)
+# Loading work.ex_mem_forward_register(behaviorlal)
+# Loading work.mem_wb_forward_register(behavioral)
+add wave -position insertpoint sim:/top_level/*
+add wave -position insertpoint sim:/top_level/U5/*
+add wave -position insertpoint sim:/top_level/U14/*
+force -freeze sim:/top_level/Global_Clock 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U12
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/U4
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /top_level/U0
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 100 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 200 ps  Iteration: 1  Instance: /top_level/U2/altsyncram_component
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 300 ps  Iteration: 3  Instance: /top_level/U4
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 400 ps  Iteration: 1  Instance: /top_level/U4
+run
+run
+run
+run
+run
+run
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 1  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 2  Instance: /top_level/U4
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 1100 ps  Iteration: 3  Instance: /top_level/U4
+run
+# End time: 11:17:31 on Apr 29,2021, Elapsed time: 13:05:47
+# Errors: 0, Warnings: 24
